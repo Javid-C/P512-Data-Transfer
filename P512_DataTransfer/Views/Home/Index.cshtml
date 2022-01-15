@@ -1,0 +1,35 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+    //List<Computer> computers = ViewBag.Computers;
+    //List<Computer> computers1 = (List<Computer>)ViewData["Computers"];
+}
+
+<h2>Sliders</h2>
+
+<ul>
+    @foreach (Slider item in Model.Sliders)
+    {
+        <li>
+            <img width="200" src="@item.Image" alt="computer image" />
+        </li>
+    }
+</ul>
+
+<ul>
+    @foreach (Computer item in Model.Computers)
+    {
+        <li style="color:@(item.Count == 0 ? "red" : "")">
+            Id-@item.Id, Brand Name - @item.BrandName, Model - @item.Model, Price - @item.Price, Count - @item.Count, Ram - @item.Ram @(item.Count == 0 ? "Stokda yoxdur" : "")
+        </li>
+    }
+</ul>
+
+<ul>
+    <li><h1>Cards</h1></li>
+    @foreach (Card item in Model.Cards)
+    {
+        <li>Id - @item.Id, Name - @item.Name </li>
+    }
+</ul>
+
